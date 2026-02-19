@@ -1,0 +1,214 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: var(--space-4) 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo-icon {
+    font-size: 1.75rem;
+}
+
+.logo-text {
+    color: var(--text-primary);
+}
+
+/* Navigation Links */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Actions */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* User Menu */
+.user-menu {
+    position: relative;
+}
+
+.user-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.user-button:hover {
+    border-color: var(--border-hover);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: white;
+}
+
+.user-name {
+    color: var(--text-primary);
+    font-weight: 500;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    right: 0;
+    min-width: 200px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.dropdown-item.danger {
+    color: var(--error);
+}
+
+.dropdown-item.danger:hover {
+    background: rgba(244, 63, 94, 0.1);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    padding: var(--space-2);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-default);
+}
+
+.mobile-link {
+    padding: var(--space-3) var(--space-4);
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+}
+
+.mobile-link:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.mobile-link.danger {
+    color: var(--error);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .navbar-links,
+    .navbar-actions {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+}

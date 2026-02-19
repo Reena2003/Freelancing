@@ -1,0 +1,156 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1.5rem;
+}
+
+.review-modal {
+    width: 100%;
+    max-width: 500px;
+    background: #1e293b;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.order-context {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 0.75rem;
+}
+
+.order-context p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.order-context h4 {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.rating-input {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.star-btn {
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.star-btn.active {
+    color: #f59e0b;
+    transform: scale(1.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.form-group textarea {
+    width: 100%;
+    min-height: 120px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    color: var(--text-primary);
+    resize: vertical;
+}
+
+.checkbox-group {
+    margin-bottom: 2rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    color: var(--text-primary);
+}
+
+.secondary-btn:hover {
+    background: rgba(148, 163, 184, 0.1);
+}
+
+.primary-btn {
+    background: var(--primary);
+    border: none;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+}
+
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

@@ -1,0 +1,202 @@
+.inbox-page {
+    padding: var(--space-8) 0;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.inbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.inbox-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+}
+
+.search-messages {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-messages svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-messages input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 0.75rem;
+    color: var(--text-primary);
+    transition: all 0.3s;
+}
+
+.search-messages input:focus {
+    border-color: var(--primary);
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.conversations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.conversation-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.conversation-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(30, 41, 59, 0.4) !important;
+    border: 1px solid rgba(148, 163, 184, 0.1) !important;
+}
+
+.conversation-card.unread {
+    background: rgba(99, 102, 241, 0.05) !important;
+    border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.conv-user-img {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.conv-user-img img,
+.user-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-avatar-placeholder {
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.unread-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    background: var(--primary);
+    border: 2.5px solid #0f172a;
+    border-radius: 50%;
+}
+
+.conv-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.conv-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.conv-top h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.conv-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.conv-gig {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.conv-last-msg {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.unread-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.15rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.empty-inbox {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.empty-inbox h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.empty-inbox p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.primary-btn {
+    padding: 0.75rem 2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.primary-btn:hover {
+    background: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+    .inbox-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .search-messages {
+        max-width: 100%;
+    }
+}
