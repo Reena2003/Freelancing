@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+let API_BASE_URL = import.meta.env.VITE_API_URL;
 // Ensure URL ends with a slash so Axios path joining works correctly
 if (!API_BASE_URL.endsWith('/')) {
     API_BASE_URL += '/';
