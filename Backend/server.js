@@ -19,9 +19,11 @@ const app = express();
 const httpServer = createServer(app);
 
 // Initialize Socket.io
+const clientOrigin = process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, "") : "http://localhost:5173";
+
 const io = new Server(httpServer, {
     cors: {
-        origin: process.env.CLIENT_URL || "http://localhost:5173",
+        origin: [clientOrigin, `${clientOrigin}/`],
         methods: ["GET", "POST"],
         credentials: true,
     },
@@ -29,7 +31,7 @@ const io = new Server(httpServer, {
 
 // Middleware
 app.use(cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: [clientOrigin, `${clientOrigin}/`], // Allow both with and without slash
     credentials: true,
 }));
 app.use(express.json({ limit: "50mb" }));
